@@ -4,7 +4,7 @@ import java.util.*;
 /**
  * 
  */
-public class Cliente {
+public class Cliente extends Persona{
 
     /**
      * Default constructor

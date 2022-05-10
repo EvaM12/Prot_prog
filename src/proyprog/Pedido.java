@@ -16,8 +16,6 @@ public class Pedido {
 
     private Producto Productos[];
 
-    private float PrecioTotal;
-
     private String estado;
 
     private Date Fecha;

@@ -3,7 +3,7 @@ package productos;
 import proyprog.Producto;
 import java.util.*;
 
-public class PlacaBase {
+public class PlacaBase extends Producto{
 
     public PlacaBase() {
     }

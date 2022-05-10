@@ -3,7 +3,7 @@ package productos;
 import proyprog.Producto;
 import java.util.*;
 
-public class DiscoDuro {
+public class DiscoDuro extends Producto{
 
     public DiscoDuro() {
     }

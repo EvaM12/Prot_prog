@@ -3,7 +3,7 @@ package productos;
 import proyprog.Producto;
 import java.util.*;
 
-public class ram {
+public class ram extends Producto{
 
     public ram() {
     }

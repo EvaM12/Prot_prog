@@ -3,7 +3,7 @@ package productos;
 import proyprog.Producto;
 import java.util.*;
 
-public class pantalla {
+public class pantalla extends Producto{
 
     public pantalla() {
     }

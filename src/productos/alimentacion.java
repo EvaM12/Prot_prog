@@ -3,7 +3,7 @@ package productos;
 import proyprog.Producto;
 import java.util.*;
 
-public class alimentacion {
+public class alimentacion extends Producto{
 
     public alimentacion() {
     }

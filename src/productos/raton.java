@@ -3,7 +3,7 @@ package productos;
 import proyprog.Producto;
 import java.util.*;
 
-public class raton {
+public class raton extends Producto{
 
     public raton() {
     }

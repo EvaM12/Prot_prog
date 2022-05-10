@@ -3,7 +3,7 @@ package productos;
 import proyprog.Producto;
 import java.util.*;
 
-public class refigeracion {
+public class refigeracion extends Producto{
 
     public refigeracion() {
     }
