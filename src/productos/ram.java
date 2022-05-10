@@ -4,18 +4,12 @@ import proyprog.Producto;
 import java.util.*;
 
 public class ram extends Producto{
-
-    public ram() {
-    }
-
+   
     private String tipo;
-
     private float frecuencia;
-
     private int capacidad;
-
     private float latencia;
-
+    
     public String getTipo() {
         return tipo;
     }
@@ -47,5 +41,15 @@ public class ram extends Producto{
     public void setLatencia(float late) {
         latencia = late;
     }
+
+    public ram(String tipo, float frecuencia, int capacidad, float latencia, String nombre, float precio, String marca, int stock, float PVP) {
+        super(nombre, precio, marca, stock, PVP);
+        this.tipo = tipo;
+        this.frecuencia = frecuencia;
+        this.capacidad = capacidad;
+        this.latencia = latencia;
+    }
+
+    
 
 }
