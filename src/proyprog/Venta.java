@@ -10,7 +10,8 @@ public class Venta {
     /**
      * Default constructor
      */
-    public Venta() {
+    public Venta(Persona Cliente) {
+        this.Cliente = Cliente;
     }
 
     private Persona Cliente;
