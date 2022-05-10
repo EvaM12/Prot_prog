@@ -17,6 +17,12 @@ public class Pedido {
         this.estado = estado;
         this.Fecha = Fecha;
     }
+    public void añadirProducto(Producto p){
+        Productos.add(p);
+    }
+    public void eliminarProducto(Producto p){
+        Productos.remove(p);
+    }
 
     public void calcularPrecio() {
         // TODO implement here
