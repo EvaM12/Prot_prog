@@ -12,11 +12,11 @@ public class Pedido {
     private Date Fecha;
     
     public Pedido(int IDPedido, String estado, Date Fecha) {
-        IDPedido = this.IDPedido;
+        this.IDPedido = IDPedido;
         Productos = new ArrayList();
-        estado = this.estado;
-        Fecha = this.Fecha;
-    }    
+        this.estado = estado;
+        this.Fecha = Fecha;
+    }
 
     public void calcularPrecio() {
         // TODO implement here
