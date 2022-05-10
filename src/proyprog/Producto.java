@@ -7,7 +7,12 @@ import java.util.*;
  */
 public abstract class Producto {
 
-    public Producto() {
+    public Producto(String nombre, float precio, String marca, int stock, float PVP) {
+        nombre = this.nombre;
+        precio = this.precio;
+        marca = this.marca;
+        stock = this.stock;
+        PVP = this.PVP;
     }
 
     private String nombre;
