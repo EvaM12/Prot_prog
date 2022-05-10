@@ -5,11 +5,32 @@ import java.util.*;
 
 public class pantalla extends Producto{
 
-    public pantalla() {
+   
+    private float Tamaño;
+    private int Resolucion;
+
+    
+
+    public pantalla(float Tamaño, int Resolucion, String nombre, float precio, String marca, int stock, float PVP) {
+        super(nombre, precio, marca, stock, PVP);
+        this.Tamaño = Tamaño;
+        this.Resolucion = Resolucion;
+    }
+   
+    public float getTamaño() {
+        return Tamaño;
     }
 
-    private float Tamaño;
+    public void setTamaño(float Tamaño) {
+        this.Tamaño = Tamaño;
+    }
 
-    private int Resolucion;
+    public int getResolucion() {
+        return Resolucion;
+    }
+
+    public void setResolucion(int Resolucion) {
+        this.Resolucion = Resolucion;
+    }
 
 }
