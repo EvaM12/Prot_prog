@@ -1,13 +1,16 @@
-package productos;
+package modelo.productos;
 
-import proyprog.Producto;
-import java.util.*;
 
-public class teclado extends Producto{
+public class teclado {
 
-    public teclado() {
+    private String tipo;
+    
+    public teclado(String nombre, float precio, String marca, int stock, float pvp, String tipo) {
+        super(nombre, precio, marca, stock, pvp);
+        this.tipo = tipo;
     }
-
-    private String Tipo;
-
+    
+    public String getTipo() {
+        return tipo;
+    }
 }
