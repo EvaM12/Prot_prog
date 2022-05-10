@@ -1,19 +1,30 @@
-package proyprog;
-import java.util.*;
+package modelo.proyprog;
+
 
 /**
  * 
  */
-public class Empleado extends Persona{
+public class Empleado extends Persona {
 
     /**
      * Default constructor
      */
-    public Empleado() {
+    public Empleado(String dni, String nombre, String apellidos, long telefono, String email,String usuario, String contraseña, float salario, boolean gestor) {
+        super(dni, nombre, apellidos, telefono, email, usuario, contraseña);
+        this.salario = salario;
+        this.gestor = gestor;
     }
 
-    private float Salario;
+    public float getSalario() {
+        return salario;
+    }
 
-    private boolean esGestor;
+    public boolean isGestor() {
+        return gestor;
+    }
+
+    private float salario;
+
+    private boolean gestor;
 
 }
