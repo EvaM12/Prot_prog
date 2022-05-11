@@ -43,5 +43,13 @@ public class Pedido {
     public void calcularPrecio() {
 
     }
+     public Float precioTotal(){
+        float precioTotal=0;
+        for(int i=0;i<productos.size();i++){
+            precioTotal += productos.get(i).calcularPVP();
+           
+        } 
+        return precioTotal;
+    }
 
 }
