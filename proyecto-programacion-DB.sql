@@ -82,7 +82,7 @@ create table caja (
 create table grafica (
     nombre_grafica varchar(40),     
     memoria_grafica int,
-    frecuencia_grafica varchar(10),
+    frecuencia_grafica float(10),
     tiporam_grafica varchar(7),
     constraint grafica_pk primary key (nombre_grafica),
     constraint grafica_fk foreign key (nombre_grafica) references producto(nombre_producto)
@@ -99,7 +99,7 @@ create table pantalla (
 CREATE TABLE procesador (
     nombre_procesador varchar(40),    
     socket_procesador varchar(10),
-    frecuencia_procesador int,
+    frecuencia_procesador float,
     nucleos_procesador int,
     hilos_procesador int,
     constraint procesador_pk primary key (nombre_procesador),
@@ -109,7 +109,7 @@ CREATE TABLE procesador (
 CREATE TABLE ram (
     nombre_ram varchar(40),    
     tipo_ram varchar(7),
-    frecuencia_ram int,
+    frecuencia_ram float,
     capacidad_ram int,
     latencia_ram varchar(10),
     constraint ram_pk primary key (nombre_ram),
