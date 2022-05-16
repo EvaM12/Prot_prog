@@ -16,14 +16,14 @@ public class DAOTienda {
     //CREAR PERSONA
     public void crearPersona(Persona p) throws ErrorCrearPersona {
         try {
-            ConexionDB.getInstancia().getStatement().executeUpdate("insert into persona values('"
+            ConexionDB.getInstancia().getStatement().executeUpdate (
+                    "insert into persona values ('"
                     + p.getDni() + "', '"
                     + p.getNombre() + "', '"
                     + p.getApellidos() + "', "
-                    + Long.toString(p.getTelefono()) + ", '"
+                    + p.getTelefono() + ", '"
                     + p.getEmail() + "')"
             );
-
             if (p instanceof Cliente) {
                 crearCliente((Cliente) p);
             } else {
@@ -36,7 +36,7 @@ public class DAOTienda {
 
     public void crearCliente(Cliente c) throws ErrorCrearPersona {
         try {
-            ConexionDB.getInstancia().getStatement().executeUpdate("insert into Cliente values('"
+            ConexionDB.getInstancia().getStatement().executeUpdate("insert into Cliente values ('"
                     + c.getDni() + "', '"
                     + c.isSocio() + ")"
             );
@@ -47,8 +47,8 @@ public class DAOTienda {
 
     public void crearEmpleado(Empleado e) throws ErrorCrearPersona {
         try {
-            ConexionDB.getInstancia().getStatement().executeUpdate("insert into Empleado values('"
-                    + e.getDni() + "', '"
+            ConexionDB.getInstancia().getStatement().executeUpdate("insert into Empleado values ('"
+                    + e.getDni() + "', "
                     + e.getSalario() + ", "
                     + e.isAdministrador() + ", '"
                     + e.getContrasenna() + "')"
@@ -98,7 +98,7 @@ public class DAOTienda {
     //CREAR PRODUCTO-------------------------------------------------------------------------
     public void crearProducto(Producto p) throws ErrorCrearProducto {
         try {
-            ConexionDB.getInstancia().getStatement().executeUpdate("insert into Producto values('"
+            ConexionDB.getInstancia().getStatement().executeUpdate("insert into Producto values ('"
                     + p.getNombre() + "', "
                     + Float.toString(p.getPrecio()) + ", '"
                     + p.getMarca() + "', "
@@ -272,7 +272,7 @@ public class DAOTienda {
                     + dni + "')"
             );
             if (rs.next()) {
-                temporal = new Empleado(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getFloat(7), rs.getBoolean(8));
+                temporal = new Empleado(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getFloat(7), rs.getBoolean(8), rs.getString(6));
             }
         } catch (SQLException e) {
 

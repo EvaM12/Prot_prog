@@ -7,13 +7,12 @@ import java.util.*;
 
 public class Tienda {
 
-    static Tienda instancia;
     private ArrayList<Pedido> pedidos;
     private ArrayList<Producto> productos;
     private ArrayList<Empleado> empleados;
     private ArrayList<Cliente> clientes;
 
-    private Tienda() throws ErrorConectarDB {
+    public Tienda() throws ErrorConectarDB {
         ConexionDB.conectar();
         this.pedidos = new ArrayList<>();
         this.productos = new ArrayList<>();
@@ -21,12 +20,15 @@ public class Tienda {
         this.clientes = new ArrayList<>();
     }
 
-    public void annadirPedidos(Pedido p) {
+    public void annadirPedidos(Pedido p) throws ErrorCrearPedido, ErrorCrearDetallePedido {
         pedidos.add(p);
+        DAOTienda.getInstancia().crearPedido(p);
     }
 
-    public void annadirProducto(Producto p) {
+    public void annadirProducto(Producto p) throws ErrorCrearProducto {
         productos.add(p);
+        DAOTienda.getInstancia().crearProducto(p);
+        
     }
 
     public void eliminarProducto(Producto p) throws ErrorEliminarProducto {
@@ -34,23 +36,18 @@ public class Tienda {
         productos.remove(p);
     }
 
-    public void annadirEmpleado(Empleado e) {
+    public void annadirEmpleado(Empleado e) throws ErrorCrearPersona {
         empleados.add(e);
+        DAOTienda.getInstancia().crearPersona(e);
     }
 
     public void eliminarEmpleado(Empleado e) {
-        
+       DAOTienda.getInstancia().eliminarEmpleado(e);
         empleados.remove(e);
     }
 
-    public void annadirCliente(Cliente c) {
+    public void annadirCliente(Cliente c) throws ErrorCrearPersona {
         clientes.add(c);
-    }
-    
-    public static Tienda getInstancia() throws ErrorConectarDB {
-        if (instancia == null) {
-            instancia = new Tienda();
-        }
-        return instancia;
+        DAOTienda.getInstancia().crearCliente(c);
     }
 }

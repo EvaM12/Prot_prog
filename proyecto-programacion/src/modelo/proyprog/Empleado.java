@@ -7,7 +7,7 @@ public class Empleado extends Persona {
     private boolean administrador;
     
 
-    public Empleado(String dni, String nombre, String apellidos, long telefono, String email, String contrasenna, float salario, boolean administrador) {
+    public Empleado(String dni, String nombre, String apellidos, long telefono, String email, float salario, boolean administrador, String contrasenna) {
         super(dni, nombre, apellidos, telefono, email);
         this.salario = salario;
         this.administrador = administrador;

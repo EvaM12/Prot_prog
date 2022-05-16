@@ -21,7 +21,7 @@ public class ConexionDB {
             JOptionPane.showMessageDialog(null, "Sin conexión con el driver.");
         }
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ventasdb", "root", "");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyecto-programacion", "root", "");
             stmt = conn.createStatement();
         } catch (SQLException e) {
             throw new ErrorConectarDB();

@@ -8,7 +8,7 @@ public class Persona {
     private long telefono;
     private String email;
 
-    public Persona(String nombre, String apellidos, String dni, long telefono, String email) {
+    public Persona(String dni, String nombre, String apellidos, long telefono, String email) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.dni = dni;

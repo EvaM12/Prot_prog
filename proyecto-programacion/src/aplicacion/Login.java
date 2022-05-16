@@ -133,7 +133,7 @@ public class Login extends javax.swing.JFrame {
         if (checkCampos()) {
             if (checkUsuario()) {
                 this.setVisible(false);
-                Tienda tienda = new Tienda(user);
+                TiendaJFrame tienda = new TiendaJFrame(user);
                 tienda.setVisible(true);
             }
         }

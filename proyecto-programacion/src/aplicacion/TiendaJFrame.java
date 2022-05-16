@@ -5,21 +5,23 @@
 package aplicacion;
 
 import modelo.proyprog.Empleado;
+import modelo.proyprog.*;
 
 /**
  *
  * @author Alumno
  */
-public class Tienda extends javax.swing.JFrame {
+public class TiendaJFrame extends javax.swing.JFrame {
 
     private Empleado user;
+    private Tienda tienda;
 
-    public Tienda(Empleado user) {
+    public TiendaJFrame(Empleado user) {
         this.user = user;
         initComponents();
     }
 
-    private Tienda() {
+    private TiendaJFrame() {
 
     }
 
@@ -65,21 +67,22 @@ public class Tienda extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiendaJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiendaJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiendaJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tienda.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TiendaJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Tienda().setVisible(true);
+                new TiendaJFrame().setVisible(true);
             }
         });
     }
