@@ -557,6 +557,60 @@ public class DAOTienda {
         return  retorno;
     }
     
+    /*
+    public List<Procesador> getProcesador() {
+    List<Procesador> retorno = null;
+    try {
+        retorno = new ArrayList<>();
+        String sentencia = "select producto.*, socket_procesador, frecuencia_procesador, nucleos_procesador, hilos_procesador from producto, procesador where nombre_procesador = nombre_producto";
+        PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()) {
+            retorno.add(new Procesador(
+                    rs.getString("socket_procesador"),
+                    rs.getFLoat("frecuencia_procesador"),
+                    rs.getInt("nucleos_procesador"),
+                    rs.getInt("hilos_procesador"),
+                    rs.getString("nombre_producto"),
+                    rs.getFloat("precio_producto"),
+                    rs.getString("marca_producto"),
+                    rs.getInt("stock_producto")
+                    )
+            );
+        }
+    } catch (SQLException | ErrorConectarDB ex) {
+    
+    }
+    return  retorno;
+}
+
+public List<Placa_Base> getPlaca_Base() {
+    List<Placa_Base> retorno = null;
+    try {
+        retorno = new ArrayList<>();
+        String sentencia = "select producto.*, socket, tipo from producto, placa_base where nombre_placa_base = nombre_producto";
+        PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+        ResultSet rs = ps.executeQuery();
+        while(rs.next()) {
+            retorno.add(new Placa_Base(
+                    rs.getString("socket"),
+                    rs.getFloat("tipo"),
+                    rs.getString("nombre_producto"),
+                    rs.getFloat("precio_producto"),
+                    rs.getString("marca_producto"),
+                    rs.getInt("stock_producto")
+                    )
+            );
+        }
+    } catch (SQLException | ErrorConectarDB ex) {
+    
+    }
+    return  retorno;
+}
+    
+    */
+    
+    
     public static DAOTienda getInstancia() {
         if(instancia == null) {
             instancia = new DAOTienda();
