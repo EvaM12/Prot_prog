@@ -660,13 +660,8 @@ public List<Placa_Base> getPlaca_Base() {
         }
         return retorno;
     }    
-    public static DAOTienda getInstancia() {
-        if(instancia == null) {
-            instancia = new DAOTienda();
-        } 
-        return instancia;
-    }
-}
+    
+
 public List<Grafica> getGrafica(){
         List<Grafica> retorno = null;
         try{
