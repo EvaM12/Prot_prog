@@ -667,6 +667,54 @@ public List<Placa_Base> getPlaca_Base() {
         return instancia;
     }
 }
+public List<Grafica> getGrafica(){
+        List<Grafica> retorno = null;
+        try{
+            retorno = new ArrayList<>();
+            String sentencia = "select producto.*, memoria_grafica, frecuencia_grafica, tiporam_grafica from producto, grafica where nombre_producto = nombre_grafica ";
+            PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                retorno.add(new Grafica(
+                        rs.getInt("memoria_grafica"),
+                        rs.getFloat("frecuencia_grafica"),
+                        rs.getString("tiporam_grafica"),
+                        rs.getString("nombre_producto"),
+                        rs.getFloat("precio_producto"),
+                        rs.getString("marca_producto"),
+                        rs.getInt("stock_producto")
+                )
+                );
+            }
+        }catch (SQLException | ErrorConectarDB ex) {
+        
+        }
+        return  retorno;
+    }
+    public List<Pantalla> getPantalla() {
+        List<Pantalla> retorno = null;
+        try {
+            retorno = new ArrayList<>();
+            String sentencia = "select producto.*, tamaño_pantalla, resolucion_pantalla from producto,pantalla where nombre_pantalla = nombre_producto";
+            PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                retorno.add(new Pantalla(
+                        rs.getFloat("tamaño_pantalla"),
+                        rs.getInt("resolucion_pantalla"),
+                        rs.getString("nombre_producto"),
+                        rs.getFloat("precio__producto"),
+                        rs.getString("marca_producto"),
+                        rs.getInt("stock_producto")
+                        )
+                );
+            }
+        } catch (SQLException | ErrorConectarDB ex) {
+        
+        }
+        return  retorno;
+    }
+    
 
     
     
