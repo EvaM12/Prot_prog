@@ -531,34 +531,7 @@ public class DAOTienda {
         
         }
         return  retorno;
-    }
-    
-    public List<Ram> getRam() {
-        List<Ram> retorno = null;
-        try {
-            retorno = new ArrayList<>();
-            String sentencia = "select producto.*, tipo_ram, frecuencia_ram, capacidad_ram, latencia_ram from producto, fuente_alimentacion where nombre_fuente_alimentacion = nombre_producto";
-            PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
-            ResultSet rs = ps.executeQuery();
-            while(rs.next()) {
-                retorno.add(new Ram(
-                        rs.getString("tipo_ram"),
-                        rs.getFloat(""),
-                        rs.getInt("nombre_producto"),
-                        rs.getFloat("precio_producto"),
-                        rs.getString("marca_producto"),
-                        rs.getFloat("stock_producto"),
-                        rs.getString(""),
-                        rs.getInt("")
-                        )
-                );
-            }
-        } catch (SQLException | ErrorConectarDB ex) {
-        
-        }
-        return  retorno;
-    }
-    
+    }   
     
     public List<Procesador> getProcesador() {
     List<Procesador> retorno = null;
@@ -710,7 +683,102 @@ public List<Grafica> getGrafica(){
         return  retorno;
     }
     
-
+    public List<Ram> getRam() {
+        List<Ram> retorno = null;
+        try {
+            retorno = new ArrayList<>();
+            String sentencia = "select producto.*, tipo_ram, frecuencia_ram, capacidad_ram, latencia_ram from producto, ram where nombre_producto = nombre_ram";
+            PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                retorno.add(new Ram(
+                        rs.getString("tipo_ram"),
+                        rs.getFloat("frecuencia_ram"),
+                        rs.getInt("capacidad_ram"),
+                        rs.getString("latencia_ram"),
+                        rs.getString("nombre_producto"),
+                        rs.getFloat("precio_producto"),
+                        rs.getString("marca_producto"),
+                        rs.getInt("stock_producto")
+                        )
+                );
+            }
+        } catch (SQLException | ErrorConectarDB ex) {
+        
+        }
+        return  retorno;
+    }
+    
+    public List<Raton> getRaton() {
+        List<Raton> retorno = null;
+        try {
+            retorno = new ArrayList<>();
+            String sentencia = "select producto.*, sensor_raton, dpi_raton from producto, raton where nombre_producto = nombre_raton";
+            PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                retorno.add(new Raton(
+                        rs.getString("sensor_raton"), 
+                        rs.getInt("dpi_raton"),
+                        rs.getString("nombre_producto"),
+                        rs.getFloat("precio_producto"),
+                        rs.getString("marca_producto"),
+                        rs.getInt("stock_producto")
+                        )
+                );
+            }
+        } catch (SQLException | ErrorConectarDB ex) {
+        
+        }
+        return  retorno;
+    }
+    
+    public List<Refrigeracion> getRefrigeracion() {
+        List<Refrigeracion> retorno = null;
+        try {
+            retorno = new ArrayList<>();
+            String sentencia = "select producto.*, tipo_refrigeracion from producto, refrigeracion where nombre_producto = nombre_refrigeracion";
+            PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                retorno.add(new Refrigeracion(
+                        rs.getString("tipo_refrigeracion"),
+                        rs.getString("nombre_producto"),
+                        rs.getFloat("precio_producto"),
+                        rs.getString("marca_producto"),
+                        rs.getInt("stock_producto")
+                        )
+                );
+            }
+        } catch (SQLException | ErrorConectarDB ex) {
+        
+        }
+        return  retorno;
+    }
+    
+    public List<Teclado> getTeclado() {
+        List<Teclado> retorno = null;
+        try {
+            retorno = new ArrayList<>();
+            String sentencia = "select producto.*, tipo_teclado from producto, teclado where nombre_producto = nombre_teclado";
+            PreparedStatement ps = ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                retorno.add(new Teclado(
+                        rs.getString("nombre_producto"),
+                        rs.getFloat("precio_producto"),
+                        rs.getString("marca_producto"),
+                        rs.getInt("stock_producto"),
+                        rs.getString("tipo_teclado")
+                        )
+                );
+            }
+        } catch (SQLException | ErrorConectarDB ex) {
+        
+        }
+        return  retorno;
+    }
+    
     
     
     public static DAOTienda getInstancia() {
