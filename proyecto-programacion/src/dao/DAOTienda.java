@@ -507,6 +507,8 @@ public class DAOTienda {
         }
     }
     
+    --------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
     public List<Alimentacion> getAlimentacion() {
         List<Alimentacion> retorno = null;
         try {
@@ -609,6 +611,63 @@ public List<Placa_Base> getPlaca_Base() {
 }
     
     */
+    
+    public List<Caja> getCaja(){
+        List<Caja> retorno = null;
+        try{
+            retorno=new ArrayList<>();
+            String sentencia ="Select producto.* from producto , caja where nombre_producto=nombre";
+            PreparedStatement ps=ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                retorno.add(new Caja(
+                rs.getString("nombre_producto"),
+                rs.getFloat("precio_producto"),
+                rs.getString("marca_producto"),
+                rs.getInt("stock_producto")
+                )
+                );
+            }
+        }
+        catch(SQLException ex){
+            
+        }
+        return retorno;
+    }
+    public List<DiscoDuro> getDiscoDuro(){
+        List<DiscoDuro> retorno= null;
+        try{
+            retorno=new ArrayList<>();
+            String sentencia ="Select producto.*,tipo_disco_duro, capacidad_disco_duro,velLectura_disco_duro,velEscritura_disco_duro from producto , disco_duro where nombre_producto=nombre_disco_duro";
+            PreparedStatement ps=ConexionDB.getInstancia().getConnection().prepareStatement(sentencia);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                retorno.add(new DiscoDuro(
+                        rs.getString("tipo_disco_duro"),
+                        rs.getInt("  capacidad_disco_duro"),
+                        rs.getInt("velLectura_disco_duro"),
+                        rs.getInt("velEscritura_disco_duro"),
+                rs.getString("nombre_producto"),
+                rs.getFloat("precio_producto"),
+                rs.getString("marca_producto"),
+                rs.getInt("stock_producto")
+                )
+                );
+            }
+        }
+        catch(SQLException ex){
+            
+        }
+        return retorno;
+    }    
+    public static DAOTienda getInstancia() {
+        if(instancia == null) {
+            instancia = new DAOTienda();
+        } 
+        return instancia;
+    }
+}
+
     
     
     public static DAOTienda getInstancia() {
