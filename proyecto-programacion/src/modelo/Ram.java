@@ -6,9 +6,9 @@ public class Ram extends Producto {
     private String tipo;
     private float frecuencia;
     private int capacidad;
-    private float latencia;
+    private String latencia;
 
-    public Ram(String tipo, float frecuencia, int capacidad, float latencia, String nombre, float precio, String marca, int stock) {
+    public Ram(String tipo, float frecuencia, int capacidad, String latencia, String nombre, float precio, String marca, int stock) {
         super(nombre, precio, marca, stock);
         this.tipo = tipo;
         this.frecuencia = frecuencia;
@@ -40,11 +40,11 @@ public class Ram extends Producto {
         capacidad = cap;
     }
 
-    public float getLatencia() {
+    public String getLatencia() {
         return latencia;
     }
 
-    public void setLatencia(float late) {
+    public void setLatencia(String late) {
         latencia = late;
     }
     
