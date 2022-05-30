@@ -585,7 +585,7 @@ public List<PlacaBase> getPlaca_Base() {
     
     
     
-    public List<Caja> getCaja() throws ErrorConectarDB{
+    public List<Caja> getCaja() {
         List<Caja> retorno = null;
         try{
             retorno=new ArrayList<>();
@@ -602,12 +602,12 @@ public List<PlacaBase> getPlaca_Base() {
                 );
             }
         }
-        catch(SQLException ex){
+        catch(SQLException | ErrorConectarDB ex){
             
         }
         return retorno;
     }
-    public List<DiscoDuro> getDiscoDuro() throws ErrorConectarDB{
+    public List<DiscoDuro> getDiscoDuro() {
         List<DiscoDuro> retorno= null;
         try{
             retorno=new ArrayList<>();
@@ -628,7 +628,7 @@ public List<PlacaBase> getPlaca_Base() {
                 );
             }
         }
-        catch(SQLException ex){
+        catch(SQLException | ErrorConectarDB ex) {
             
         }
         return retorno;
@@ -777,6 +777,22 @@ public List<Grafica> getGrafica(){
         
         }
         return  retorno;
+    }
+    
+    public ArrayList<Producto> getProductos() {
+        ArrayList<Producto> retorno = new ArrayList<>();
+        retorno.addAll(getAlimentacion());
+        retorno.addAll(getCaja());
+        retorno.addAll(getDiscoDuro());
+        retorno.addAll(getGrafica());
+        retorno.addAll(getPantalla());
+        retorno.addAll(getPlaca_Base());
+        retorno.addAll(getProcesador());
+        retorno.addAll(getRam());
+        retorno.addAll(getRaton());
+        retorno.addAll(getRefrigeracion());
+        retorno.addAll(getTeclado());
+        return retorno;
     }
     
     
