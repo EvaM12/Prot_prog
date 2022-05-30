@@ -559,7 +559,7 @@ public class DAOTienda {
         return  retorno;
     }
     
-    /*
+    
     public List<Procesador> getProcesador() {
     List<Procesador> retorno = null;
     try {
@@ -610,7 +610,7 @@ public List<Placa_Base> getPlaca_Base() {
     return  retorno;
 }
     
-    */
+    
     
     public List<Caja> getCaja(){
         List<Caja> retorno = null;
