@@ -1,9 +1,9 @@
 
 package aplicacion;
 
+import aplicacion.modeloTabla.ModeloAlimentacion;
 import dao.DAOTienda;
 import dao.exception.ErrorConectarDB;
-import javax.swing.table.DefaultTableModel;
 import modelo.*;
 
 
@@ -11,8 +11,7 @@ public class TiendaJFrame extends javax.swing.JFrame {
 
     private Empleado user;
     private Tienda tienda;
-    private DefaultTableModel modelo;
-    private String[] cabecera = {"Nombre", "Marca", "Precio", "Stock"};
+    private ModeloAlimentacion modelo;
 
     public TiendaJFrame(Empleado user) throws ErrorConectarDB {
         this.user = user;
@@ -22,7 +21,7 @@ public class TiendaJFrame extends javax.swing.JFrame {
     }
     
     private void cargarTabla() {
-        modelo = new DefaultTableModel(tienda.getTabla(), cabecera);
+        modelo = new ModeloAlimentacion();
         jTable1.setModel(modelo);
     }
     
@@ -37,9 +36,9 @@ public class TiendaJFrame extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(400, 400));
         setSize(new java.awt.Dimension(400, 400));
 
         jButton1.setText("Añadir");
@@ -92,15 +91,17 @@ public class TiendaJFrame extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(254, 254, 254))
+            .addComponent(jTabbedPane1)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -137,6 +138,7 @@ public class TiendaJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

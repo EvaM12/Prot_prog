@@ -3,8 +3,6 @@ package aplicacion;
 import dao.DAOTienda;
 import dao.exception.ErrorConectarDB;
 import java.awt.Toolkit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 

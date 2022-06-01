@@ -21,11 +21,13 @@ public class Tienda {
     public String[][] getTabla() {
         String[][] tabla = new String [productos.size()][4];
         for (int i = 0; i < productos.size(); i++) {
-            tabla[i][0] = productos.get(i).getNombre();
-            tabla[i][1] = productos.get(i).getMarca();
-            tabla[i][2] = ""+productos.get(i).getPrecio();
-            tabla[i][3] = ""+productos.get(i).getStock();
+            Producto aux = productos.get(i);
+            tabla[i][0] = aux.getNombre();
+            tabla[i][1] = aux.getMarca();
+            tabla[i][2] = ""+aux.getPrecio();
+            tabla[i][3] = ""+aux.getStock();
         }
+        
         return tabla;
     }
 
