@@ -4,6 +4,8 @@ import dao.exception.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import modelo.*;
 
 public class DAOTienda {
@@ -617,7 +619,7 @@ public List<PlacaBase> getPlaca_Base() {
             while(rs.next()){
                 retorno.add(new DiscoDuro(
                         rs.getString("tipo_disco_duro"),
-                        rs.getInt("  capacidad_disco_duro"),
+                        rs.getInt("capacidad_disco_duro"),
                         rs.getInt("velLectura_disco_duro"),
                         rs.getInt("velEscritura_disco_duro"),
                 rs.getString("nombre_producto"),
@@ -669,9 +671,9 @@ public List<Grafica> getGrafica(){
             while(rs.next()) {
                 retorno.add(new Pantalla(
                         rs.getFloat("tamaño_pantalla"),
-                        rs.getInt("resolucion_pantalla"),
+                        rs.getString("resolucion_pantalla"),
                         rs.getString("nombre_producto"),
-                        rs.getFloat("precio__producto"),
+                        rs.getFloat("precio_producto"),
                         rs.getString("marca_producto"),
                         rs.getInt("stock_producto")
                         )
@@ -794,9 +796,7 @@ public List<Grafica> getGrafica(){
         retorno.addAll(getTeclado());
         return retorno;
     }
-    
-    
-    
+
     public static DAOTienda getInstancia() {
         if(instancia == null) {
             instancia = new DAOTienda();
