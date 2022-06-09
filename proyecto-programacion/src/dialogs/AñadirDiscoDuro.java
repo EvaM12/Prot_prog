@@ -18,6 +18,39 @@ public class AñadirDiscoDuro extends javax.swing.JDialog {
         initComponents();
     }
 
+    public String nombreDiscoDuro(){
+        return nombre.getText();
+    }
+    
+    public String marcaDiscoDuro(){
+        return marca.getText();
+    }
+    
+    public float precioDiscoDuro(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockDiscoDuro(){
+        return Integer.parseInt(stock.getText());
+    }
+    
+    public String tipoDiscoDuro(){
+        return tipo.getText();
+    }
+    
+    public int capacidadDiscoDuro(){
+        return Integer.parseInt(capacidad.getText());
+    }
+    
+    public int vLecturaDiscoDuro(){
+        return Integer.parseInt(vLectura.getText());
+    }
+    
+    public int vEscrituraDiscoDuro(){
+        return Integer.parseInt(vEscritura.getText());
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -17,7 +17,32 @@ public class AñadirAlimentacion extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public String nombreAlimentacion(){
+        return nombre.getText();
+    }
+    
+    public String marcaAlimentacion(){
+        return marca.getText();
+    }
+    
+    public float precioAlimentacion(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockAlimentacion(){
+        return Integer.parseInt(stock.getText());
+    }
 
+    public String certificacionAlimentacion(){
+        return certificacion.getText();
+    }
+    
+    public String potenciaAlimentacion(){
+        return potencia.getText();
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

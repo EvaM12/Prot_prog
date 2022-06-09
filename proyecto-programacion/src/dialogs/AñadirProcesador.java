@@ -17,6 +17,37 @@ public class AñadirProcesador extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    public String nombreProcesador(){
+        return nombre.getText();
+    }
+    
+    public String marcaProcesador(){
+        return marca.getText();
+    }
+    
+    public float precioProcesador(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockProcesador(){
+        return Integer.parseInt(stock.getText());
+    }
+
+    public String socketProcesador(){
+        return socket.getText();
+    }
+    
+    public float frecuenciaProcesador(){
+        return Float.parseFloat(frecuencia.getText());
+    }
+    
+    public int nucleosProcesador(){
+        return Integer.parseInt(nucleos.getText());
+    }
+
+    public int hilosProcesador(){
+        return Integer.parseInt(hilos.getText());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

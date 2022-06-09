@@ -17,6 +17,30 @@ public class AñadirPlacaBase extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public String nombrePlacaBase(){
+        return nombre.getText();
+    }
+    
+    public String marcaPlacaBase(){
+        return marca.getText();
+    }
+    
+    public String socketPlacaBase(){
+        return socket.getText();
+    }
+    
+    public String tipoPlacaBase(){
+        return tipo.getText();
+    }
+    
+    public float precioPlacaBase(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockPlacaBase(){
+        return Integer.parseInt(stock.getText());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -17,6 +17,29 @@ public class AñadirRaton extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    public String nombreRaton(){
+        return nombre.getText();
+    }
+    
+    public String marcaRaton(){
+        return marca.getText();
+    }
+    
+    public float precioRaton(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockRaton(){
+        return Integer.parseInt(stock.getText());
+    }
+
+    public String sensorRaton(){
+        return sensor.getText();
+    }
+    
+    public int dpiRaton(){
+        return Integer.parseInt(dpi.getText());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

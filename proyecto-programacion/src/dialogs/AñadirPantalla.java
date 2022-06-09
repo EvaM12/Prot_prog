@@ -17,6 +17,29 @@ public class AñadirPantalla extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    public String nombrePantalla(){
+        return nombre.getText();
+    }
+    
+    public String marcaPantalla(){
+        return marca.getText();
+    }
+    
+    public float precioPantalla(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockPantalla(){
+        return Integer.parseInt(stock.getText());
+    }
+    
+    public String resolucionPantalla(){
+        return resolucion.getText();
+    }
+    
+    public float tamañoPantalla(){
+        return Float.parseFloat(tamaño.getText());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

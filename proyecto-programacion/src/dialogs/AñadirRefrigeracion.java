@@ -17,6 +17,27 @@ public class AñadirRefrigeracion extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public String nombreRefrigeracion(){
+        return nombre.getText();
+    }
+    
+    public String marcaRefrigeracion(){
+        return marca.getText();
+    }
+    
+    public float precioRefrigeracion(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockRefrigeracion(){
+        return Integer.parseInt(stock.getText());
+    }
+    
+    public String tipoRefrigeracion(){
+        return tipo.getText();
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -17,6 +17,23 @@ public class AñadirCaja extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public String nombreCaja(){
+        return nombre.getText();
+    }
+    
+    public String marcaCaja(){
+        return marca.getText();
+    }
+    
+    public float precioCaja(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockCaja(){
+        return Integer.parseInt(stock.getText());
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

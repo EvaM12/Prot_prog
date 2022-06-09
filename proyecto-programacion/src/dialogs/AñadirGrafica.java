@@ -18,6 +18,35 @@ public class AñadirGrafica extends javax.swing.JDialog {
         initComponents();
     }
 
+    public String nombreGrafica(){
+        return nombre.getText();
+    }
+    
+    public String marcaGrafica(){
+        return marca.getText();
+    }
+    
+    public float precioGrafica(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockGrafica(){
+        return Integer.parseInt(stock.getText());
+    }
+    
+    public String tipoRAMGrafica(){
+        return tipoRAM.getText();
+    }
+    
+    public float frecuenciaGrafica(){
+        return Float.parseFloat(frecuencia.getText());
+    }
+    
+    public int memoriaGrafica(){
+        return Integer.parseInt(memoria.getText());
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -17,6 +17,37 @@ public class AñadirRam extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    public String nombreRAM(){
+        return nombre.getText();
+    }
+    
+    public String marcaRAM(){
+        return marca.getText();
+    }
+    
+    public float precioRAM(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockRAM(){
+        return Integer.parseInt(stock.getText());
+    }
+
+    public String tipoRAM(){
+        return tipo.getText();
+    }
+    
+    public String latenciaRAM(){
+        return latencia.getText();
+    }
+    
+    public float frecuenciaRAM(){
+        return Float.parseFloat(frecuencia.getText());
+    }
+    
+    public int capacidadRAM(){
+        return Integer.parseInt(capacidad.getText());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -42,7 +73,7 @@ public class AñadirRam extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         frecuencia = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        capapcidad = new javax.swing.JTextField();
+        capacidad = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         latencia = new javax.swing.JTextField();
 
@@ -84,7 +115,7 @@ public class AñadirRam extends javax.swing.JDialog {
 
         jLabel8.setText("Capacidad:");
 
-        capapcidad.setPreferredSize(new java.awt.Dimension(150, 20));
+        capacidad.setPreferredSize(new java.awt.Dimension(150, 20));
 
         jLabel9.setText("Latencia:");
 
@@ -113,7 +144,7 @@ public class AñadirRam extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(latencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(capapcidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(capacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(frecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stock, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -154,7 +185,7 @@ public class AñadirRam extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
-                    .addComponent(capapcidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(capacidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
@@ -221,7 +252,7 @@ public class AñadirRam extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField capapcidad;
+    private javax.swing.JTextField capacidad;
     private javax.swing.JTextField frecuencia;
     private javax.swing.JButton guardar;
     private javax.swing.JLabel jLabel1;

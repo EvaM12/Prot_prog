@@ -17,6 +17,26 @@ public class AñadirTeclado extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     }
+    
+    public String nombreTeclado(){
+        return nombre.getText();
+    }
+    
+    public String marcaTeclado(){
+        return marca.getText();
+    }
+    
+    public String tipoTeclado(){
+        return tipo.getText();
+    }
+    
+    public float precioTeclado(){
+        return Float.parseFloat(precio.getText());
+    }
+    
+    public int stockTeclado(){
+        return Integer.parseInt(stock.getText());
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
