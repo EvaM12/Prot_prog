@@ -6,13 +6,11 @@ public class Pedido {
 
     private int IDPedido;
     private ArrayList<Producto> productos;
-    private String estado;
     private Date fecha;
 
-    public Pedido(int IDPedido, String estado, Date fecha) {
+    public Pedido(int IDPedido, Date fecha) {
         this.IDPedido = IDPedido;
         this.productos = new ArrayList<>();
-        this.estado = estado;
         this.fecha = fecha;
     }
 
@@ -22,10 +20,6 @@ public class Pedido {
 
     public ArrayList<Producto> getProductos() {
         return productos;
-    }
-
-    public String getEstado() {
-        return estado;
     }
 
     public Date getFecha() {

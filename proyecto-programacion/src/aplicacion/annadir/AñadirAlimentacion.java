@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-package dialogs;
+package aplicacion.annadir;
+
+import modelo.Alimentacion;
 
 /**
  *
@@ -13,6 +15,7 @@ public class AñadirAlimentacion extends javax.swing.JDialog {
     /**
      * Creates new form AñadirAlimentacion
      */
+    
     public AñadirAlimentacion(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -112,6 +115,11 @@ public class AñadirAlimentacion extends javax.swing.JDialog {
         });
 
         guardar.setText("Guardar");
+        guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                guardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -180,9 +188,9 @@ public class AñadirAlimentacion extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(potencia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(guardar)
-                .addContainerGap())
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         pack();
@@ -199,6 +207,10 @@ public class AñadirAlimentacion extends javax.swing.JDialog {
     private void potenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potenciaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_potenciaActionPerformed
+
+    private void guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_guardarActionPerformed
 
     /**
      * @param args the command line arguments

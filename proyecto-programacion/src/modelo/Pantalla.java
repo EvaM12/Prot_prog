@@ -4,9 +4,9 @@ package modelo;
 public class Pantalla extends Producto {
 
     private float tamanno;
-    private int resolucion;
+    private String resolucion;
 
-    public Pantalla(float Tamaño, int Resolucion, String nombre, float precio, String marca, int stock) {
+    public Pantalla(float Tamaño, String Resolucion, String nombre, float precio, String marca, int stock) {
         super(nombre, precio, marca, stock);
         this.tamanno = Tamaño;
         this.resolucion = Resolucion;
@@ -20,11 +20,11 @@ public class Pantalla extends Producto {
         this.tamanno = Tamaño;
     }
 
-    public int getResolucion() {
+    public String getResolucion() {
         return resolucion;
     }
 
-    public void setResolucion(int Resolucion) {
+    public void setResolucion(String Resolucion) {
         this.resolucion = Resolucion;
     }
     

@@ -4,6 +4,11 @@
  */
 package aplicacion;
 
+import aplicacion.annadir.*;
+import java.util.Date;
+import javax.swing.JDialog;
+import modelo.Compra;
+
 /**
  *
  * @author Alumno
@@ -13,8 +18,12 @@ public class CompraJFrame extends javax.swing.JFrame {
     /**
      * Creates new form CompraJFrame
      */
+    
+    private Compra compra;
+    
     public CompraJFrame() {
         initComponents();
+        compra = new Compra(new Date());
     }
 
     /**
@@ -59,6 +68,11 @@ public class CompraJFrame extends javax.swing.JFrame {
         });
 
         jButton1.setText("Añadir producto");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,9 +126,9 @@ public class CompraJFrame extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jToggleButton1))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jToggleButton1)
+                    .addComponent(jButton1))
                 .addContainerGap(46, Short.MAX_VALUE))
         );
 
@@ -141,6 +155,56 @@ public class CompraJFrame extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JDialog a = null;
+        switch (jComboBox1.getSelectedIndex()) {
+            case 1:
+                a = new AñadirAlimentacion(this, true);
+                a.setVisible(true);
+                break;
+            case 2:
+                a = new AñadirCaja(this, true);
+                a.setVisible(true);
+                break;
+            case 3:
+                a = new AñadirDiscoDuro(this, true);
+                a.setVisible(true);
+                break;
+            case 4:
+                a = new AñadirGrafica(this, true);
+                a.setVisible(true);
+                break;
+            case 5:
+                a = new AñadirPantalla(this, true);
+                a.setVisible(true);
+                break;
+            case 6:
+                a = new AñadirPlacaBase(this, true);
+                a.setVisible(true);
+                break;
+            case 7:
+                a = new AñadirProcesador(this, true);
+                a.setVisible(true);
+                break;
+            case 8:
+                a = new AñadirRam(this, true);
+                a.setVisible(true);
+                break;
+            case 9:
+                a = new AñadirRaton(this, true);
+                a.setVisible(true);
+                break;
+            case 10:
+                a = new AñadirRefrigeracion(this, true);
+                a.setVisible(true);
+                break;
+            case 11:
+                a = new AñadirTeclado(this, true);
+                a.setVisible(true);
+                break;
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

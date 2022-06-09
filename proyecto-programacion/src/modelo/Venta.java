@@ -8,7 +8,7 @@ public class Venta extends Pedido {
     private Persona empleado;
 
     public Venta(int IDPedido, String estado, Date fecha, Persona cliente, Persona empleado) {
-        super(IDPedido, estado, fecha);
+        super(IDPedido, fecha);
         this.cliente = cliente;
         this.empleado = empleado;
     }
