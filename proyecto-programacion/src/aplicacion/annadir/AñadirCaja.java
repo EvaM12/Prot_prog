@@ -10,7 +10,7 @@ public class AñadirCaja extends javax.swing.JDialog {
 
     
     private Compra compra;
-    public AñadirCaja(java.awt.Frame parent, boolean modal, Compra compra) {
+    public AñadirCaja(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
